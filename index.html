@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TitanSu Monitor Tester Enterprise - Ultra Premium Edition</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container enterprise-container">
+        <!-- Animated Background -->
+        <div class="animated-bg">
+            <div class="bg-particle"></div>
+            <div class="bg-particle"></div>
+            <div class="bg-particle"></div>
+            <div class="bg-particle"></div>
+            <div class="bg-particle"></div>
+        </div>
+
+        <header class="enterprise-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon-wrapper">
+                        <div class="logo-icon">🖥️</div>
+                        <div class="logo-glow"></div>
+                    </div>
+                    <div>
+                        <h1>TitanSu Monitor Tester</h1>
+                        <p class="subtitle">Enterprise Ultra Premium Edition</p>
+                        <div class="version-badge">v2.0 Enterprise</div>
+                    </div>
+                </div>
+                <div class="header-stats">
+                    <div class="stat-item enterprise-stat">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-content">
+                            <div class="stat-label">FPS</div>
+                            <div class="stat-value" id="fps">0</div>
+                            <div class="stat-trend" id="fps-trend">→</div>
+                        </div>
+                    </div>
+                    <div class="stat-item enterprise-stat">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Тесты</div>
+                            <div class="stat-value" id="tests-completed">0</div>
+                            <div class="stat-trend">✓</div>
+                        </div>
+                    </div>
+                    <div class="stat-item enterprise-stat">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Время</div>
+                            <div class="stat-value" id="session-time">00:00</div>
+                            <div class="stat-trend">▶</div>
+                        </div>
+                    </div>
+                    <div class="stat-item enterprise-stat">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-content">
+                            <div class="stat-label">Качество</div>
+                            <div class="stat-value" id="quality-score">100%</div>
+                            <div class="stat-trend" id="quality-trend">↑</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-progress">
+                <div class="progress-bar" id="session-progress"></div>
+            </div>
+        </header>
+
+        <div class="main-layout">
+            <aside class="sidebar enterprise-sidebar">
+                <div class="sidebar-header">
+                    <div class="sidebar-title">Навигация</div>
+                    <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+                </div>
+                <nav class="test-menu">
+                    <div class="menu-section">
+                        <div class="menu-title">
+                            <span>🏠</span>
+                            <span>Главная</span>
+                        </div>
+                        <button class="test-btn" data-test="home">
+                            <span class="btn-icon">🏠</span>
+                            <span class="btn-text">Главная панель</span>
+                            <span class="btn-indicator"></span>
+                        </button>
+                    </div>
+                    
+                    <div class="menu-section">
+                        <div class="menu-title">
+                            <span>⚡</span>
+                            <span>Производительность</span>
+                        </div>
+                        <button class="test-btn" data-test="fps">
+                            <span class="btn-icon">⚡</span>
+                            <span class="btn-text">Тест FPS</span>
+                            <span class="btn-badge premium">390Hz</span>
+                        </button>
+                        <button class="test-btn" data-test="motion">
+                            <span class="btn-icon">🌀</span>
+                            <span class="btn-text">Размытие движения</span>
+                        </button>
+                        <button class="test-btn" data-test="response">
+                            <span class="btn-icon">⚡</span>
+                            <span class="btn-text">Время отклика</span>
+                        </button>
+                    </div>
+
+                    <div class="menu-section">
+                        <div class="menu-title">
+                            <span>🎨</span>
+                            <span>Цвет и качество</span>
+                        </div>
+                        <button class="test-btn" data-test="dead-pixels">
+                            <span class="btn-icon">🔴</span>
+                            <span class="btn-text">Битые пиксели</span>
+                        </button>
+                        <button class="test-btn" data-test="colors">
+                            <span class="btn-icon">🎨</span>
+                            <span class="btn-text">Цвета RGB</span>
+                        </button>
+                        <button class="test-btn" data-test="gradient">
+                            <span class="btn-icon">🌈</span>
+                            <span class="btn-text">Градиент</span>
+                        </button>
+                        <button class="test-btn" data-test="contrast">
+                            <span class="btn-icon">⚫</span>
+                            <span class="btn-text">Контрастность</span>
+                        </button>
+                        <button class="test-btn" data-test="gamma">
+                            <span class="btn-icon">📈</span>
+                            <span class="btn-text">Гамма-кривая</span>
+                            <span class="btn-badge new">NEW</span>
+                        </button>
+                        <button class="test-btn" data-test="color-accuracy">
+                            <span class="btn-icon">🎯</span>
+                            <span class="btn-text">Точность цветов</span>
+                            <span class="btn-badge new">NEW</span>
+                        </button>
+                    </div>
+
+                    <div class="menu-section">
+                        <div class="menu-title">
+                            <span>🔬</span>
+                            <span>Продвинутые тесты</span>
+                        </div>
+                        <button class="test-btn" data-test="stripes">
+                            <span class="btn-icon">📊</span>
+                            <span class="btn-text">Полосы</span>
+                        </button>
+                        <button class="test-btn" data-test="uniformity">
+                            <span class="btn-icon">💡</span>
+                            <span class="btn-text">Равномерность</span>
+                        </button>
+                        <button class="test-btn" data-test="viewing-angle">
+                            <span class="btn-icon">👁️</span>
+                            <span class="btn-text">Углы обзора</span>
+                        </button>
+                        <button class="test-btn" data-test="grid">
+                            <span class="btn-icon">📐</span>
+                            <span class="btn-text">Сетка</span>
+                        </button>
+                        <button class="test-btn" data-test="backlight-bleed">
+                            <span class="btn-icon">💡</span>
+                            <span class="btn-text">Засветка</span>
+                            <span class="btn-badge new">NEW</span>
+                        </button>
+                    </div>
+
+                    <div class="menu-section">
+                        <div class="menu-title">
+                            <span>📊</span>
+                            <span>Аналитика</span>
+                        </div>
+                        <button class="test-btn" data-test="statistics">
+                            <span class="btn-icon">📈</span>
+                            <span class="btn-text">Статистика</span>
+                        </button>
+                        <button class="test-btn" data-test="reports">
+                            <span class="btn-icon">📄</span>
+                            <span class="btn-text">Отчеты</span>
+                            <span class="btn-badge premium">PDF</span>
+                        </button>
+                        <button class="test-btn" data-test="recommendations">
+                            <span class="btn-icon">🤖</span>
+                            <span class="btn-text">Рекомендации AI</span>
+                            <span class="btn-badge new">AI</span>
+                        </button>
+                    </div>
+
+                    <div class="menu-section">
+                        <div class="menu-title">
+                            <span>⚙️</span>
+                            <span>Настройки</span>
+                        </div>
+                        <button class="test-btn" data-test="settings">
+                            <span class="btn-icon">⚙️</span>
+                            <span class="btn-text">Настройки</span>
+                        </button>
+                        <button class="test-btn" data-test="calibration">
+                            <span class="btn-icon">🎨</span>
+                            <span class="btn-text">Калибровка</span>
+                            <span class="btn-badge premium">PRO</span>
+                        </button>
+                    </div>
+                </nav>
+            </aside>
+
+            <main id="test-area" class="test-area enterprise-test-area">
+                <div class="welcome-screen">
+                    <div class="welcome-hero">
+                        <div class="hero-icon-wrapper">
+                            <div class="hero-icon">🖥️</div>
+                            <div class="hero-glow"></div>
+                        </div>
+                        <h1>TitanSu Monitor Tester Enterprise</h1>
+                        <p class="hero-subtitle">Профессиональная система тестирования мониторов уровня Enterprise</p>
+                        <div class="hero-badges">
+                            <span class="badge">390Hz Ready</span>
+                            <span class="badge">Color Accurate</span>
+                            <span class="badge">AI Powered</span>
+                            <span class="badge">Enterprise Grade</span>
+                        </div>
+                    </div>
+                    <div class="info-grid enterprise-grid">
+                        <div class="info-card enterprise-card" data-test="fps">
+                            <div class="card-header">
+                                <div class="card-icon">⚡</div>
+                                <div class="card-badge">Premium</div>
+                            </div>
+                            <h3>Тест FPS</h3>
+                            <p>Точное измерение частоты обновления с расширенной аналитикой и графиками в реальном времени</p>
+                            <div class="card-footer">
+                                <span class="card-feature">390Hz Target</span>
+                                <span class="card-feature">Real-time Charts</span>
+                            </div>
+                        </div>
+                        <div class="info-card enterprise-card" data-test="color-accuracy">
+                            <div class="card-header">
+                                <div class="card-icon">🎯</div>
+                                <div class="card-badge new">NEW</div>
+                            </div>
+                            <h3>Точность цветов</h3>
+                            <p>Профессиональная проверка точности цветопередачи с измерением Delta E и цветовых профилей</p>
+                            <div class="card-footer">
+                                <span class="card-feature">Delta E</span>
+                                <span class="card-feature">Color Profiles</span>
+                            </div>
+                        </div>
+                        <div class="info-card enterprise-card" data-test="gamma">
+                            <div class="card-header">
+                                <div class="card-icon">📈</div>
+                                <div class="card-badge new">NEW</div>
+                            </div>
+                            <h3>Гамма-кривая</h3>
+                            <p>Визуализация и анализ гамма-кривой для проверки правильности передачи яркости</p>
+                            <div class="card-footer">
+                                <span class="card-feature">Gamma 2.2</span>
+                                <span class="card-feature">Visualization</span>
+                            </div>
+                        </div>
+                        <div class="info-card enterprise-card" data-test="reports">
+                            <div class="card-header">
+                                <div class="card-icon">📄</div>
+                                <div class="card-badge premium">PDF</div>
+                            </div>
+                            <h3>Профессиональные отчеты</h3>
+                            <p>Генерация детальных PDF отчетов с графиками, статистикой и рекомендациями</p>
+                            <div class="card-footer">
+                                <span class="card-feature">PDF Export</span>
+                                <span class="card-feature">Charts</span>
+                            </div>
+                        </div>
+                        <div class="info-card enterprise-card" data-test="recommendations">
+                            <div class="card-header">
+                                <div class="card-icon">🤖</div>
+                                <div class="card-badge new">AI</div>
+                            </div>
+                            <h3>AI Рекомендации</h3>
+                            <p>Умные рекомендации на основе анализа результатов тестирования и лучших практик</p>
+                            <div class="card-footer">
+                                <span class="card-feature">AI Analysis</span>
+                                <span class="card-feature">Smart Tips</span>
+                            </div>
+                        </div>
+                        <div class="info-card enterprise-card" data-test="calibration">
+                            <div class="card-header">
+                                <div class="card-icon">🎨</div>
+                                <div class="card-badge premium">PRO</div>
+                            </div>
+                            <h3>Калибровка</h3>
+                            <p>Профессиональные инструменты калибровки цветов и яркости для оптимальных настроек</p>
+                            <div class="card-footer">
+                                <span class="card-feature">Color Calibration</span>
+                                <span class="card-feature">Brightness</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <div class="controls enterprise-controls" id="controls" style="display: none;">
+            <div class="control-group">
+                <button id="fullscreen-btn" class="control-btn enterprise-btn">
+                    <span class="btn-icon">⛶</span>
+                    <span class="btn-text">Полный экран</span>
+                </button>
+                <button id="exit-btn" class="control-btn enterprise-btn">
+                    <span class="btn-icon">❌</span>
+                    <span class="btn-text">Выход</span>
+                </button>
+                <button id="save-results-btn" class="control-btn enterprise-btn">
+                    <span class="btn-icon">💾</span>
+                    <span class="btn-text">Сохранить</span>
+                </button>
+                <button id="export-pdf-btn" class="control-btn enterprise-btn premium">
+                    <span class="btn-icon">📄</span>
+                    <span class="btn-text">PDF Отчет</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="notification enterprise-notification" id="notification"></div>
+        
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loading-overlay">
+            <div class="loader">
+                <div class="loader-ring"></div>
+                <div class="loader-text">Загрузка...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
