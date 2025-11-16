@@ -58,7 +58,7 @@
 
 1. **Клонируйте репозиторий**
    ```bash
-   git clone https://github.com/yourusername/TESTMonitor.git
+   git clone https://github.com/yourusername/TESTMonitor.git](https://github.com/maksum101997/TESTMonitor/tree/main
    cd TESTMonitor
    ```
 
